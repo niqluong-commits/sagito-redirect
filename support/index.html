@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Sagito — help and support</title>
+<link rel="icon" href="/favicon.png" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Help with Sagito: a forgotten parent PIN, a purchase that has not appeared, managing a subscription, and how to get in touch.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --green:#2F7D6E; --ink:#14302A; --paper:#F4F8F6; --light:#55736A; --border:#D8E3DE; --tint:#DCEBE5; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font:400 17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; }
+  .wrap { max-width:1000px; margin:0 auto; padding:64px 24px; }
+  h1 { font-size:31px; margin:0 0 8px; letter-spacing:-.01em; }
+  h2 { font-size:20px; margin:34px 0 8px; letter-spacing:-.01em; }
+  p { color:var(--light); margin:0 0 26px; }
+  h2 + p, h2 + ul { margin-bottom:18px; }
+  ul { color:var(--light); margin:0 0 26px; padding-left:22px; }
+  li { margin:0 0 8px; }
+  a.block { color:var(--green); display:block; margin:0 0 12px; font-weight:650; }
+  p a, li a { color:var(--green); font-weight:650; }
+  .wrap > p, .wrap > h2, .wrap > ul, #adventure,
+  section[aria-labelledby="adventure"] > p, section[aria-labelledby="adventure"] > ul { max-width:640px; }
+  .logo { display:block; width:230px; max-width:100%; height:auto; margin-bottom:24px; }
+  .lede { font-size:20px; color:var(--ink); max-width:640px; }
+  .get { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:0 0 14px; }
+  /* Apple's badge, unaltered. The padding is the clear space their guidelines require:
+     at least a tenth of the badge's height on every side. */
+  a.badge { display:inline-block; padding:6px; }
+  a.badge img { display:block; height:52px; width:auto; }
+  a.badge:active { opacity:.85; }
+  .soon { color:var(--light); font-size:15px; margin:0; }
+  .gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin:32px 0 40px; }
+  figure { margin:0; min-width:0; }
+  .gallery a { display:block; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px #14302a18; }
+  .gallery img { display:block; width:100%; height:auto; }
+  figcaption { margin-top:12px; font-size:16px; color:var(--ink); font-weight:600; }
+  .rule { border:0; border-top:1px solid var(--border); margin:48px 0 0; max-width:640px; }
+  a:focus-visible { outline:3px solid var(--green); outline-offset:5px; }
+  footer { margin-top:56px; padding-top:18px; border-top:1px solid var(--tint);
+    color:var(--light); font-size:14px; }
+  @media (max-width:600px) {
+    .wrap { padding:32px 20px; }
+    .gallery { grid-template-columns:1fr; max-width:360px; margin-inline:auto; gap:28px; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1><img class="logo" src="/images/sagito-logo.svg" width="384" height="138" alt="Sagito"></h1>
+  <h2 id="support" tabindex="-1">Help with Sagito</h2>
+  <p>Everything below is about using the app. If you are looking for what Sagito is and
+  what it covers, <a href="/">the main page</a> has that.</p>
+
+  <h2>Getting in touch</h2>
+  <p>Email <a href="mailto:info@sagito.app">info@sagito.app</a>. A person reads it, and
+  we aim to reply within two working days.</p>
+  <p>It helps to say which device you are on and what you were doing at the time. Please
+  do not send anything about your child that we do not need — we hold no account for you
+  and would rather not start one.</p>
+
+  <h2>Forgotten the parent PIN</h2>
+  <p>Tap <em>Forgotten your PIN?</em> on the keypad and enter the recovery word chosen
+  when the PIN was set. That clears the PIN and lets you choose a new one. Nothing your
+  explorers have done is lost.</p>
+  <p>If the recovery word has gone too, we cannot recover it for you — it never leaves
+  the device, so we have never had a copy. Reinstalling the app will let you set a fresh
+  PIN, but it also clears the explorers and their progress.</p>
+
+  <h2>A purchase has not appeared</h2>
+  <p>Open the grown-up area and tap <em>Restore purchases</em>. Purchases are tied to
+  the App Store or Google Play account that made them, so restoring works on any device
+  signed in to that account.</p>
+  <p>If it still does not appear, email us with the store receipt and we will look into
+  it.</p>
+
+  <h2>Managing or cancelling a subscription</h2>
+  <p>Sagito Plus is billed by Apple or Google, not by us, so it is cancelled in their
+  settings rather than in the app. The grown-up area has a link straight to the right
+  page. Cancelling stops the next payment and leaves the current period running.</p>
+  <p>Nothing an explorer has earned is taken away when a subscription ends — the cards,
+  coins and campsite stay. Only the extra questions stop.</p>
+
+  <h2>Deleting everything</h2>
+  <p>The grown-up area, under Privacy, has an option that erases every explorer, all
+  their progress, your PIN and your recovery word. There is nothing to delete at our
+  end, because nothing was ever sent to us.</p>
+
+  <h2>Privacy</h2>
+  <a class="block" href="/privacy">Read the privacy notice</a>
+
+  <p>Sagito is not affiliated with any exam board or school. Questions are ours, not any
+  school&rsquo;s own papers.</p>
+<footer>&copy; <span id="cy">2026</span> QNL LTD</footer>
+</main>
+<script>
+/* The copyright year: a fixed first year and a clock-following end, matching
+   constants/legal.ts in the app repository. Without JavaScript the markup already
+   reads "© 2026", which is correct rather than merely graceful. */
+(function () {
+  var now = new Date().getFullYear();
+  var el = document.getElementById('cy');
+  if (el && now > 2026) el.textContent = '2026\u2013' + now;
+})();
+</script>
+</body>
+</html>

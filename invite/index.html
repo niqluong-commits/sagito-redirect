@@ -1,0 +1,155 @@
+<title>Sagito — you have been sent a code</title>
+<link rel="icon" href="/favicon.png" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<style>
+  :root { --green:#2F7D6E; --ink:#14302A; --paper:#F4F8F6; --light:#55736A; --border:#D8E3DE; --tint:#DCEBE5; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font:400 17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; }
+  .wrap { max-width:600px; margin:0 auto; padding:48px 24px 88px; }
+  h1 { font-size:31px; line-height:1.2; margin:0 0 8px; letter-spacing:-.01em; }
+  .lede { color:var(--light); margin:0 0 32px; }
+  h2 { font-size:20px; margin:38px 0 12px; padding-top:20px; border-top:1px solid var(--border); }
+  p, li { margin:0 0 14px; }
+  ol { padding-left:22px; }
+  a { color:var(--green); }
+  .codebox { background:#fff; border:2px solid var(--border); border-radius:14px; padding:16px; margin:0 0 12px; }
+  .codebox code { display:block; word-break:break-all; font-size:14px; line-height:1.5; color:var(--ink); }
+  button { font:inherit; font-weight:650; color:#fff; background:var(--green); border:0;
+    border-radius:12px; padding:13px 20px; cursor:pointer; width:100%; }
+  button:active { opacity:.85; }
+  /* Apple's badge, unaltered. The padding is the clear space their guidelines
+     require: at least a tenth of the badge's height on every side. */
+  a.badge { display:inline-block; padding:6px; }
+  a.badge img { display:block; height:48px; width:auto; }
+  a.badge:active { opacity:.85; }
+  .soon { color:var(--light); font-size:15px; margin:6px 0 0; }
+  .said { color:var(--green); font-weight:650; margin:10px 0 0; min-height:24px; }
+  .note { background:var(--tint); border-radius:12px; padding:14px 16px; color:var(--ink); }
+  .none { display:none; }
+  footer { margin-top:56px; padding-top:18px; border-top:1px solid var(--tint);
+    color:var(--light); font-size:14px; }
+</style>
+<div class="wrap">
+  <h1>Somebody has sent you a Sagito code</h1>
+  <p class="lede">Sagito is an 11+ practice app for children. It runs entirely on the phone or tablet
+  it is installed on — there is no account and no sign-in.</p>
+
+  <div id="has-code" class="none">
+    <h2>Your code</h2>
+    <div class="codebox"><code id="code"></code></div>
+    <button id="copy" type="button">Copy the code</button>
+    <p class="said" id="said"></p>
+  </div>
+
+  <div id="no-code">
+    <h2>Your code</h2>
+    <p>This page did not receive one. Whoever sent you here should have included a code
+    beginning <code>SAGITO-</code> — copy that from their message instead.</p>
+  </div>
+
+  <h2>What to do with it</h2>
+  <ol>
+    <li><strong>Install Sagito</strong>, if you have not already — the button below opens the
+    App Store.</li>
+    <li>Open it and go to the <strong>grown-up area</strong>, at the bottom of the home screen.</li>
+    <li>To connect your families, choose <strong>Connect a family</strong>. For a card swap, open
+    <strong>Explorer cards → Swap cards</strong> and paste it where it says <strong>Got a code?</strong></li>
+    <li><strong>Paste the code</strong> and follow what it says.</li>
+  </ol>
+
+  <!--
+    The App Store link is the id form on purpose: the slug in Apple's canonical URL is
+    built from the app name, so it changes if the name ever does, while
+    `/app/id6810705803` does not. The id is `ascAppId` in `eas.json`, and
+    `docs/legal/joinPage.test.mjs` checks the two still agree.
+
+    The badge is Apple's own artwork, downloaded from their badge API and used
+    unaltered, which is what their marketing guidelines require — a hand-styled
+    lookalike is not allowed. It lives at `docs/legal/badges/` here and is published to
+    `/badges/` on the site, the same split as `/privacy`. Do not recolour it, rotate it,
+    put effects behind it or render it below 40px tall.
+
+    PLAY: there is no Google Play link because vc34 is still in review and the listing
+    404s. The day it is live, add Google's own badge here pointing at
+    https://play.google.com/store/apps/details?id=io.qnl.sagito and delete the line
+    below it. The test knows the package name and will check the link if it finds one.
+    Google's badge carries its own built-in padding, so match the two on the height of
+    the artwork rather than the height of the file, or Apple's will look larger.
+  -->
+  <p><a class="badge" href="https://apps.apple.com/gb/app/id6810705803"><img
+    src="/badges/download-on-the-app-store.svg" width="120" height="40"
+    alt="Download Sagito on the App Store"></a></p>
+  <p class="soon">On Android? Sagito is not on Google Play yet — it is with Google for review.</p>
+
+  <p class="note"><strong>Codes run out.</strong> A code to connect lasts a day, and a swap or a gift
+  three days, so if yours is refused as expired, just ask for another.</p>
+
+  <h2>Is this safe?</h2>
+  <p>A code carries only what it needs. A code to connect two families carries the family name the
+  sender chose and the first names or nicknames of the members they chose to connect; a card swap
+  code carries which card, and no names at all. Never an adult's name, never a location, never
+  anything about how a child is getting on. A code only works for the family it was sent to, but it
+  is ordinary text, so treat one like a note passed in the playground rather than a sealed envelope.</p>
+  <p>The full <a href="/privacy">privacy policy</a> explains what the app does and
+  does not keep.</p>
+<footer>&copy; <span id="cy">2026</span> QNL LTD</footer>
+</div>
+<script>
+  // The code arrives as ?d=… on the link that brought you here. It is only ever
+  // displayed and copied: this page has no network of its own and sends nothing on.
+  (function () {
+    /**
+     * Read the payload WITHOUT decoding it.
+     *
+     * The app percent-encodes the JSON once, and the text code it expects carries
+     * that same single layer. `URLSearchParams.get` decodes, so building the code
+     * from its result handed the app raw JSON and the app decoded a second time.
+     * Ordinary names survived that; a household called "100% Club" was rejected as
+     * malformed, and "Team %41" silently arrived as "Team A". Spaces came back too,
+     * defeating the whole point of a code with none in it.
+     *
+     * So the raw substring is taken exactly as written. One layer in, one layer out.
+     * See docs/CODE-AUDIT-2026-09-09.md D5.
+     *
+     * The fragment is read first: a link built by the app puts the code after '#',
+     * which is never sent to the server, so GitHub's logs and any mail scanner that
+     * follows the link never see it. The query string is read too, so links shared
+     * before that change still work.
+     */
+    function rawParam(source) {
+      var m = /[?#&]d=([^&]*)/.exec(source || '');
+      return m && m[1] !== '' ? m[1] : null;
+    }
+    var d = rawParam(location.hash) || rawParam(location.search);
+    var route = (location.pathname.split('/').filter(Boolean).pop() || 'invite').toUpperCase();
+    if (!d) return;
+    var code = 'SAGITO-' + route + '-' + d;
+    document.getElementById('code').textContent = code;
+    document.getElementById('has-code').className = '';
+    document.getElementById('no-code').className = 'none';
+    document.getElementById('copy').addEventListener('click', function () {
+      var said = document.getElementById('said');
+      function ok() { said.textContent = 'Copied. Now paste it into Sagito.'; }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(ok, function () {
+          said.textContent = 'Could not copy automatically — select the code above and copy it.';
+        });
+      } else {
+        said.textContent = 'Select the code above and copy it.';
+      }
+    });
+  })();
+</script>
+<script>
+/* The copyright year: a fixed first year and a clock-following end, matching
+   constants/legal.ts. Without JavaScript the markup already reads "© 2026",
+   which is correct rather than merely graceful. */
+(function () {
+  var now = new Date().getFullYear();
+  var el = document.getElementById('cy');
+  if (el && now > 2026) el.textContent = '2026\u2013' + now;
+})();
+</script>
