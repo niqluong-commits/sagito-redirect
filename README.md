@@ -8,10 +8,19 @@ there. `info.sagito.app` has been the real site since 19 September 2026. A bare
 domain that 404s is worse than no domain at all: it is the address people type by
 habit and the one a printed link is most likely to use.
 
-**Do not add pages here.** The real site is `niqluong-commits/sagito-site`, and its
-pages are generated from `niqluong-commits/sagito`. This repository exists only
-because GitHub Pages allows a single custom domain per repository — the same reason
-`sagito-privacy-redirect` is separate.
+**Do not add pages here.** The real site is `niqluong-commits/sagito-site`, and most
+of its pages do have a source in this repository, copied across rather than built:
+`privacy/` from `docs/legal/privacy-public.html`, and `gift/`, `invite/` and `swap/`
+from `docs/legal/join-public.html`. All four were byte-identical to their sources when
+checked on 21 September 2026.
+
+**Two pages have no source here.** The marketing `index.html` and `support/` were
+written in `sagito-site` directly, so they are edited there. This README used to say
+every page was generated from `sagito`, which sent at least one agent looking for a
+file that does not exist.
+
+This repository exists only because GitHub Pages allows a single custom domain per
+repository — the same reason `sagito-privacy-redirect` is separate.
 
 ## Why one repository covers both hosts
 
