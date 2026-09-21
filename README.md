@@ -26,21 +26,33 @@ in `CNAME` instead would have needed a second repository.
 **DNS is at Wix** — the nameservers are `ns4/ns5.wixdns.net` — so the records are
 edited in the Wix dashboard, not here:
 
-| Record | Host | Value |
+Domains -> Domain Actions -> **Manage DNS records**, then the `A (Host)` and
+`CNAME (Aliases)` sections:
+
+| Record | Host Name | Value |
 | --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
+| A | *(blank)* | `185.199.108.153` |
+| A | *(blank)* | `185.199.109.153` |
+| A | *(blank)* | `185.199.110.153` |
+| A | *(blank)* | `185.199.111.153` |
 | CNAME | `www` | `niqluong-commits.github.io` |
 
-The four A records replace Wix's `185.230.63.107/171/186`; the CNAME replaces
-`cdn3.wixdns.net`. **Nothing else in the zone changes** — MX and any other Wix
-records stay exactly as they are, so email is untouched. That is the main reason
-this route was chosen over moving the nameservers to Cloudflare.
+**The apex host name is blank, not `@`.** Wix's own instruction is to leave the
+field empty wherever another provider would tell you to type `@`; the field will
+not accept the character. This cost a round trip the first time.
 
-Wix may refuse to edit the apex A record while the domain is still connected to a
-Wix site; disconnect the site first, then edit. Nothing is published on it.
+Add the four new A records, then **delete Wix's three** — `185.230.63.107`, `.171`
+and `.186`. Wix's documentation is explicit that old A records left in place
+conflict with the new ones. The CNAME replaces `cdn3.wixdns.net`.
+
+**Nothing else in the zone changes** — MX and any other Wix records stay exactly as
+they are, so email is untouched.
+
+**Moving the nameservers to Cloudflare was never an option**, though it was offered
+as one before this was checked. Wix does not permit changing the nameservers of a
+Wix-registered domain: the domain would have to be transferred away from Wix first.
+Pointing the records, as above, is the only route that leaves the registration where
+it is. Recorded because it looks like an obvious alternative and is not one.
 
 `index.html` redirects three ways over, because a static host cannot send a 301:
 a `canonical` link for crawlers, a `meta refresh` for browsers with JavaScript off,
