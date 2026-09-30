@@ -108,16 +108,16 @@
         <figcaption>Wildlife cards to discover and swap</figcaption>
       </figure>
       <figure>
-        <a href="/images/4-campsite.png" aria-label="View the a camp that becomes theirs screenshot at full size">
-          <img src="/images/4-campsite.png" width="1080" height="1920" alt="An explorer’s campsite with collected items and options to send a gift to a friend or swap with family." decoding="async">
-        </a>
-        <figcaption>A camp that becomes theirs</figcaption>
-      </figure>
-      <figure>
         <a href="/images/3-shop.png" aria-label="View the coins earned by practising, never bought screenshot at full size">
-          <img src="/images/3-shop.png" width="1080" height="1920" alt="The Sagito shop, showing items that can be bought with coins earned by practising." loading="lazy" decoding="async">
+          <img src="/images/3-shop.png" width="1080" height="1920" alt="The Sagito shop, showing items that can be bought with coins earned by practising." decoding="async">
         </a>
         <figcaption>Coins earned by practising, never bought</figcaption>
+      </figure>
+      <figure>
+        <a href="/images/4-campsite.png" aria-label="View the a camp where they can relax screenshot at full size">
+          <img src="/images/4-campsite.png" width="1080" height="1920" alt="An explorer’s campsite with collected items and options to send a gift to a friend or swap with family." loading="lazy" decoding="async">
+        </a>
+        <figcaption>A camp where they can relax</figcaption>
       </figure>
       <figure>
         <a href="/images/5-progress.png" aria-label="View the grown-ups see where the work is needed screenshot at full size">
@@ -136,15 +136,20 @@
     <!--
       The card illustrations are the SIGNED-OFF production art, taken from
       docs/card-art-signed-off.json in the app repository and resampled to 420px wide —
-      the same art the app a visitor downloads actually contains. Codex has a colour pass
-      in flight under docs/card-sky-harmony/; its own REVIEW.md calls those review
-      candidates pending explicit sign-off, so they are deliberately not used here. When a
-      batch is signed off and integrated, re-copy from the manifest rather than from a
-      review folder.
+      the same art the app a visitor downloads actually contains. Checked against that
+      manifest's own sha256 hashes 2026-09-30 (all five still matched, unmoved since the
+      07 September copy) rather than assumed current. Re-copy from the manifest, never
+      from a review folder, next time any of the five are touched.
 
-      The item drawings are rendered from the production components in
-      components/basecamp/ by scripts/site/render-item-art.mjs, so the site cannot drift
-      from the app's own geometry. Re-run it rather than hand-editing an SVG here.
+      The item drawings are painted PNGs, copied straight from assets/items/ (the app's
+      own production art, components/basecamp/BasecampItemArt.tsx) by
+      scripts/site/render-item-art.mjs. That script used to render standalone SVGs from
+      the older hand-drawn react-native-svg components in components/basecamp/ — those
+      were superseded by the painted PNGs 2026-09-28, but were deliberately left on disk
+      rather than deleted, and the script kept quietly reading them, so the site drifted
+      from what the app actually shows until this was caught 2026-09-30. Re-run the
+      script rather than hand-editing a file here; it now copies the real file with no
+      separate render step to go stale again the same way.
     -->
     <h2>Forty wildlife cards, illustrated by Sagito</h2>
     <p>Every card is an original illustration of British wildlife, and each one has an evolved
@@ -164,14 +169,14 @@
     come from practice alone, so a camp is a record of work done rather than money spent.</p>
 
     <div class="items" aria-label="Some of the items an explorer can collect">
-      <img src="/images/items/explorer-tent.svg" width="72" height="72" loading="lazy" alt="a tent">
-      <img src="/images/items/compass.svg" width="72" height="72" loading="lazy" alt="a compass">
-      <img src="/images/items/rucksack.svg" width="72" height="72" loading="lazy" alt="a rucksack">
-      <img src="/images/items/binoculars.svg" width="72" height="72" loading="lazy" alt="binoculars">
-      <img src="/images/items/canoe.svg" width="72" height="72" loading="lazy" alt="a canoe">
-      <img src="/images/items/guitar.svg" width="72" height="72" loading="lazy" alt="a guitar">
-      <img src="/images/items/star-lantern.svg" width="72" height="72" loading="lazy" alt="a lantern">
-      <img src="/images/items/conch-shell.svg" width="72" height="72" loading="lazy" alt="a conch shell">
+      <img src="/images/items/plain-tent.png" width="72" height="72" loading="lazy" alt="a tent">
+      <img src="/images/items/compass.png" width="72" height="72" loading="lazy" alt="a compass">
+      <img src="/images/items/rucksack.png" width="72" height="72" loading="lazy" alt="a rucksack">
+      <img src="/images/items/binoculars.png" width="72" height="72" loading="lazy" alt="binoculars">
+      <img src="/images/items/canoe.png" width="72" height="72" loading="lazy" alt="a canoe">
+      <img src="/images/items/guitar.png" width="72" height="72" loading="lazy" alt="a guitar">
+      <img src="/images/items/star-lantern.png" width="72" height="72" loading="lazy" alt="a lantern">
+      <img src="/images/items/conch-shell.png" width="72" height="72" loading="lazy" alt="a conch shell">
     </div>
 
     <h2>Four subjects, 5,000 questions</h2>
