@@ -30,6 +30,9 @@
      at least a tenth of the badge's height on every side. */
   a.badge { display:inline-block; padding:6px; }
   a.badge img { display:block; height:52px; width:auto; }
+  /* Google's PNG has 41px of built-in clear space on a 250px height; 77px puts its artwork at 52px, level with Apple's. */
+  a.badge.play { padding:0; vertical-align:middle; }
+  a.badge.play img { height:77px; width:auto; }
   a.badge:active { opacity:.85; }
   .soon { color:var(--light); font-size:15px; margin:0; }
   .gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin:32px 0 40px; }
@@ -70,10 +73,8 @@
     tall. The copy in the app repository is docs/legal/badges/, and a test there pins its
     hash.
 
-    PLAY: no Google Play button yet — vc34 is in review and the listing 404s. When it is
-    live, add Google's own badge here and in the block lower down, and delete both .soon
-    lines. Google's badge carries its own built-in padding, so match the two on the height
-    of the artwork rather than the height of the file, or Apple's will look larger.
+    PLAY: Google's own badge is in place (badges/get-it-on-google-play.png), unaltered. Its PNG carries
+    its own clear space, so it is sized by artwork height to match Apple's rather than file height.
 
     EVERY CLAIM ON THIS PAGE comes from docs/STORE-LISTING.md in the app repository, which
     is the description Apple reviewed. Its "What has to be true before this is published"
@@ -91,7 +92,7 @@
 
     <div class="get">
       <a class="badge" href="https://apps.apple.com/gb/app/id6810705803"><img src="/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Sagito on the App Store"></a>
-      <p class="soon">Coming to Google Play soon.</p>
+      <a class="badge play" href="https://play.google.com/store/apps/details?id=io.qnl.sagito"><img src="/badges/get-it-on-google-play.png" width="646" height="250" alt="Get Sagito on Google Play"></a>
     </div>
 
     <div class="gallery" aria-label="Explore the Sagito app">
@@ -265,7 +266,7 @@
 
     <div class="get">
       <a class="badge" href="https://apps.apple.com/gb/app/id6810705803"><img src="/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Sagito on the App Store"></a>
-      <p class="soon">Coming to Google Play soon.</p>
+      <a class="badge play" href="https://play.google.com/store/apps/details?id=io.qnl.sagito"><img src="/badges/get-it-on-google-play.png" width="646" height="250" alt="Get Sagito on Google Play"></a>
     </div>
   </section>
 
