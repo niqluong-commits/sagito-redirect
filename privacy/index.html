@@ -1,7 +1,61 @@
-<title>Sagito — Privacy Policy</title>
+<title>Sagito — Privacy Policy for the app and this website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How Sagito handles your family’s data: the app collects nothing and has no server, and this website uses analytics. Read what each does and does not see.">
+<link rel="canonical" href="https://www.sagito.app/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sagito">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://www.sagito.app/privacy/">
+<meta property="og:title" content="Sagito — Privacy Policy for the app and this website">
+<meta property="og:description" content="How Sagito handles your family’s data: the app collects nothing and has no server, and this website uses analytics. Read what each does and does not see.">
+<meta property="og:image" content="https://www.sagito.app/images/og-sagito.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.sagito.app/images/og-sagito.png">
+
 <link rel="icon" href="/favicon.png" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.sagito.app/#org",
+  "name": "Sagito",
+  "legalName": "QNL LTD",
+  "url": "https://www.sagito.app/",
+  "logo": "https://www.sagito.app/apple-touch-icon.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "92 Cloonmore Avenue",
+    "addressLocality": "Orpington",
+    "addressRegion": "Kent",
+    "postalCode": "BR6 9LQ",
+    "addressCountry": "GB"
+  },
+  "email": "privacy@sagito.app",
+  "sameAs": [
+    "https://apps.apple.com/gb/app/id6810705803",
+    "https://play.google.com/store/apps/details?id=io.qnl.sagito",
+    "https://find-and-update.company-information.service.gov.uk/company/09869549",
+    "https://www.sagitogo.app"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "headline": "Sagito — Privacy Policy for the app and this website",
+  "url": "https://www.sagito.app/privacy/",
+  "mainEntityOfPage": "https://www.sagito.app/privacy/",
+  "image": "https://www.sagito.app/images/sagito-logo.svg",
+  "isPartOf": {
+    "@id": "https://www.sagito.app/#org"
+  }
+}
+</script>
 <style>
   :root { --green:#2F7D6E; --ink:#14302A; --paper:#F4F8F6; --light:#55736A; --border:#D8E3DE; }
   body { margin:0; background:var(--paper); color:var(--ink);
@@ -25,9 +79,10 @@
 </style>
 <div class="wrap">
 <h1>Sagito — Privacy Policy</h1>
-<p class="updated">Last updated 15 September 2026</p>
+<p class="updated">Last updated 2 November 2026</p>
 <h2>In one paragraph</h2>
 <p><strong>There is no Sagito server, and we never receive your child&#x27;s data.</strong> No account, no sign-in, no analytics, no advertising, no crash reporting and no third-party SDK that phones home. Everything the app knows lives in storage on the device it is installed on.</p>
+<p><strong>That is about the app.</strong> This website, www.sagito.app, is separate and does use analytics: see <em>This website</em> in Part 2.</p>
 <p><strong>One thing does talk to a network, and it is not us.</strong> When a grown-up opens the purchase area, the app asks <strong>Apple&#x27;s In-App Purchase or Google Play Billing</strong> for prices and for what your store account has already bought, and asks again when the app returns to the foreground so a cancelled subscription stops being treated as active. That conversation is between your device and Apple or Google. It carries no information about your child, and its answers are kept on the device. There is no other network activity of any kind.</p>
 <p>This was verified rather than assumed: there is no <code>fetch</code>, no HTTP client and no telemetry anywhere in the app&#x27;s source, and the only dependency capable of reaching a network is the store-purchase library described above. The web addresses in the question bank are provenance records for public-domain texts — they say where a passage was transcribed from, and are never requested at runtime.</p>
 <p><strong>Information leaves a device only when a grown-up has allowed it to</strong>, and only ever to another family&#x27;s device — through a camera or a code the parent shares. There are two routes, and a grown-up opens each of them behind the PIN.</p>
@@ -53,7 +108,7 @@
 <h2>Part 2 — For parents</h2>
 <h3>Who we are</h3>
 <p>Sagito is published by <strong>QNL LTD</strong>, 92 Cloonmore Avenue, Orpington, Kent, BR6 9LQ, company number 09869549. QNL LTD is the data controller. Questions about this policy, or about data held about you, go to <strong>Quang Luong</strong> at privacy@sagito.app. QNL LTD has not appointed a Data Protection Officer and is not required to: Article 37 applies to public authorities, large-scale systematic monitoring, and large-scale special-category processing, and none of those describe this app.</p>
-<p>Because the app sends nothing to us, we hold no personal data about you or your child and have nothing to look up, export or delete on your behalf. Everything is on your device, under your control.</p>
+<p>Because the app sends nothing to us, we hold no personal data about you or your child through it and have nothing to look up, export or delete on your behalf. Everything is on your device, under your control.</p>
 <h3>What the app stores on your device</h3>
 <table><thead><tr><th>What</th><th>Why it exists</th><th>Where it lives</th></tr></thead><tbody><tr><td>Child&#x27;s first name or nickname</td><td>Labels the profile; shown to a friend on a swap</td><td>Device storage</td></tr><tr><td>Answers, timings, accuracy, level</td><td>Shows progress and adapts difficulty</td><td>Device storage</td></tr><tr><td>Points, coins, cards, campsite items</td><td>The game</td><td>Device storage</td></tr><tr><td>Card nicknames the child gives</td><td>The child&#x27;s own</td><td>Device storage — never sent</td></tr><tr><td>Parent PIN and recovery word</td><td>Locks the grown-up area</td><td>Device storage</td></tr><tr><td>Approved friends</td><td>So cards can be swapped</td><td>Device storage</td></tr></tbody></table>
 <p>&quot;Device storage&quot; means the app&#x27;s own private area on the phone or tablet, which other apps cannot read. It is included in an iCloud or Google device backup if you have one switched on — that backup is between you and Apple or Google, and we have no access to it.</p>
@@ -91,6 +146,14 @@
 <p>If you are unhappy, please tell us at privacy@sagito.app first. You can also complain to the Information Commissioner&#x27;s Office at ico.org.uk or 0303 123 1113.</p>
 <h3>How long it is kept</h3>
 <p>For as long as you keep the app installed. There is no retention period for us to set, because we hold nothing.</p>
+<h3>This website</h3>
+<p>The app and this website are different things. The app collects nothing. <strong>This website (www.sagito.app) uses an analytics service, HeyCatch (heycatch.ai), to count visits and see which pages are read and which links are clicked.</strong> It is there so we can tell whether the pages are doing their job.</p>
+<ul>
+<li><strong>What it sees:</strong> the pages a visitor opens, what they click, how they arrived (for example from a search or a link), and technical details such as browser, device type and approximate location, which come from the IP address your browser sends to any website it visits. It may store a random identifier in your browser to tell one visit from another.</li>
+<li><strong>What it does not see:</strong> anything from the app, and nothing about a child. The analytics do not run on the invite, gift and swap link pages, whose addresses carry family codes, and the app never contacts HeyCatch.</li>
+<li><strong>Who handles it:</strong> HeyCatch acts for us in processing this. We use it on the basis of our legitimate interest in understanding how the site is used.</li>
+<li><strong>Your choice:</strong> you can block it with your browser&#x27;s tracking protection or a content blocker, and the site works the same without it. Tell us at privacy@sagito.app if you would like a visit&#x27;s data removed.</li>
+</ul>
 <h3>What will change</h3>
 <p>A <strong>connection server</strong> is designed and not built. Today two families connect by holding phones together or sharing a code, which works only while both are to hand. The server would carry an invite to a family who is not in the room, and hold a gift or a swap while the other phone is off.</p>
 <p>When it ships, the claim at the top of this document — that the only network conversation is with Apple or Google about purchases — stops being true, and <strong>this policy will be rewritten before that happens rather than after.</strong> What it is designed to hold is already decided and deliberately small: an opaque household id generated on the device, the household label you chose, a notification token, invite codes and their expiry, which households are connected, and items in transit — deleted the moment they arrive. <strong>It holds nothing about a child.</strong> No nickname, no answers, no scores.</p>

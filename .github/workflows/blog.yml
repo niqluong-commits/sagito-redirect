@@ -1,0 +1,52 @@
+# Lives in sagito-www (serves www.sagito.app) as .github/workflows/blog.yml, with scripts/build-blog.mjs and
+# scripts/blog-checks.mjs from the sagito repository (scripts/site/). See BLOG.md.
+name: Blog
+
+on:
+  pull_request:
+    paths: ['blog-src/**']
+  push:
+    branches: [main]
+    paths: ['blog-src/**', 'scripts/build-blog.mjs', 'scripts/blog-checks.mjs']
+  schedule:
+    - cron: '0 6 * * *'   # publishes articles whose date has arrived
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Content checks
+        run: |
+          set -o pipefail
+          node scripts/blog-checks.mjs --src blog-src | tee -a "$GITHUB_STEP_SUMMARY"
+
+  build:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build the blog
+        run: |
+          # A blocked article is left out and makes this step exit 1, but the others
+          # are still published, so the commit below runs first and the failure is
+          # reported at the end.
+          set +e
+          node scripts/build-blog.mjs --site . --src blog-src --out blog
+          echo "BUILD_STATUS=$?" >> "$GITHUB_ENV"
+          set -e
+          git config user.name  "sagito-blog"
+          git config user.email "sagito-blog@users.noreply.github.com"
+          git add blog sitemap.xml
+          git diff --cached --quiet || git commit -m "Blog: rebuild"
+          git push
+          exit "$BUILD_STATUS"

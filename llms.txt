@@ -1,0 +1,12 @@
+# Sagito
+
+> Sagito is a UK 11+ practice app for Year 5 children: maths, English, verbal reasoning and non-verbal reasoning, with a game of wildlife cards, coins and a camp. 5,000 questions, 2,000 of them free permanently. No account, no adverts, no analytics. Made in the UK by QNL LTD.
+
+Price: free; Sagito Plus £3.99 a month or £39.99 a year; extra camps £2.99 once. Payments and refunds go through Apple or Google.
+
+- [Home](https://www.sagito.app/): what Sagito is, pricing, how it works
+- [FAQ](https://www.sagito.app/faq/): accounts, school formats, cancelling, refunds, data
+- [How Sagito compares](https://www.sagito.app/vs/): against Pip 11+, Atom Learning, EdPlace and tutors
+- [About](https://www.sagito.app/about/): who makes it
+- [Privacy notice](https://www.sagito.app/privacy/)
+- [Help](https://www.sagito.app/support/)
